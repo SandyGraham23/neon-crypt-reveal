@@ -33,7 +33,6 @@ contract SimpleLottery {
         require(!lotteryEnded, "Lottery has ended");
         require(msg.value == ENTRY_FEE, "Must send exactly 0.01 ETH");
         require(!hasParticipated[msg.sender], "Already participated");
-        require(number >= 1 && number <= 99, "Number must be between 1 and 99");
 
         participants.push(Participant({
             user: msg.sender,
