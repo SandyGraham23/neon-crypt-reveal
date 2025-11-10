@@ -212,10 +212,6 @@ export async function batchDecrypt(
       }
     }
 
-    if (!userDecryptHandleBytes32) {
-      throw new Error("Mock decryption function not available");
-    }
-
     const provider = new JsonRpcProvider("http://localhost:8545");
     const decrypted: Record<string, number> = {};
 
