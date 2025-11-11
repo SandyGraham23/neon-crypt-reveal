@@ -38,6 +38,7 @@ contract LuckyNumberLottery is SepoliaConfig {
         ))) % 99) + 1;
 
         winningNumber = FHE.asEuint8(randomNumber);
+        FHE.allowThis(winningNumber);
     }
 
     /// @notice Submit an encrypted number (1-99) to participate in the lottery
