@@ -92,7 +92,6 @@ contract LuckyNumberLottery is SepoliaConfig {
             address(this)
         ))) % 99) + 1;
 
-        // Find first participant with the winning number
         for(uint256 i = 0; i < participants.length; i++) {
             if (participants[i].user != address(0)) {
                 winner = participants[i].user;
