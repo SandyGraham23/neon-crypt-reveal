@@ -28,7 +28,7 @@ export const Hero = ({ onStartLottery }: HeroProps) => {
         </h2>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto font-mono animate-fade-in">
           Submit your encrypted lucky number and compete for the prize pool.
-          Provably fair lottery powered by fully homomorphic encryption technology.
+          Provably fair lottery with FHE encryption technology.
         </p>
         <div className="flex gap-4 justify-center animate-fade-in">
           <Button
