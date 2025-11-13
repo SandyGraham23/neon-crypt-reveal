@@ -42,7 +42,7 @@ task("lottery:participate", "Participate in the lucky number lottery")
     await tx.wait();
     console.log(`Successfully participated! Transaction hash: ${tx.hash}`);
 
-    const [, , , participantCount] = await lottery.getLotteryStatus();
+    const participantCount = await lottery.getParticipantCount();
     console.log(`Total participants now: ${participantCount}`);
   });
 
