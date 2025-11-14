@@ -15,7 +15,6 @@ const mockSlots: PredictionSlot[] = [
   { id: "4", title: "Mars Mission 2025", category: "Space", participants: 456, status: "active" },
   { id: "5", title: "Quantum Computing", category: "Tech", participants: 1678, status: "revealed" },
   { id: "6", title: "Climate Agreement", category: "World", participants: 934, status: "active" },
-  { id: "7", title: "DeFi TVL Growth", category: "Crypto", participants: 1523, status: "active" },
 ];
 
 interface PredictionGridProps {
