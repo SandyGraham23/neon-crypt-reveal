@@ -53,6 +53,7 @@ contract SimpleLottery {
 
         lotteryEnded = true;
 
+        // Find winner
         for (uint256 i = 0; i < participants.length; i++) {
             if (participants[i].number == winningNumber) {
                 winner = participants[i].user;
