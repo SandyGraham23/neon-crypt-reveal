@@ -21,6 +21,7 @@ export function useFhevm(chainId?: number) {
         return;
       }
 
+      // Only support local network and Sepolia
       if (chainId !== 31337 && chainId !== 11155111) {
         console.error("[useFhevm] Unsupported network:", chainId);
         setError(new Error(`Unsupported network. Please switch to local network (31337) or Sepolia (11155111).`));
