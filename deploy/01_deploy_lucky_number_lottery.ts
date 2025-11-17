@@ -18,6 +18,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   console.log(`Initial prize pool: 0.1 ETH`);
   console.log(`Transaction hash: ${deployedLottery.transactionHash}`);
   console.log(`Transaction hash: ${deployedLottery.transactionHash}`);
+  console.log(`Transaction hash: ${deployedLottery.transactionHash}`);
 };
 
 export default func;
