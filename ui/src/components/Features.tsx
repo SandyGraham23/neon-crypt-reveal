@@ -20,11 +20,6 @@ const features = [
     icon: Trophy,
     title: "Automatic Winner Selection",
     description: "Winner is automatically determined and prize pool distributed instantly when lottery ends."
-  },
-  {
-    icon: Lock,
-    title: "Zero-Knowledge Proofs",
-    description: "Input validation without revealing your number through cryptographic proofs."
   }
 ];
 
