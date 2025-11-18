@@ -67,7 +67,7 @@ export const CountdownFooter = () => {
           </div>
           
           <div className="text-sm text-muted-foreground font-mono">
-            Latest Block: #847392
+            Block #847392
           </div>
         </div>
       </div>
