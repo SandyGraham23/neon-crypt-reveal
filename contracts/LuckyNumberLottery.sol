@@ -30,6 +30,7 @@ contract LuckyNumberLottery is SepoliaConfig {
 
     /// @notice Constructor generates a random winning number between 1-99
     constructor() payable {
+        // Generate pseudo-random winning number using block data
         uint8 randomNumber = uint8(uint256(keccak256(abi.encodePacked(
             block.timestamp,
             block.number,
