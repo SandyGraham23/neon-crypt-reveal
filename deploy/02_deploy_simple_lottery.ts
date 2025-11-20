@@ -17,7 +17,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   console.log(`SimpleLottery contract deployed at: ${deployedLottery.address}`);
   console.log(`Initial prize pool: 0.1 ETH`);
   console.log(`Deployment successful on network: ${hre.network.name}`);
-  console.log(`Deployment successful on network: ${hre.network.name}`);
 };
 
 export default func;

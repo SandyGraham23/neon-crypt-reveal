@@ -12,7 +12,7 @@ export const Header = () => {
                 Lucky Lottery
               </h1>
               <p className="text-xs text-muted-foreground font-mono">
-                Encrypt. Compete. Win. 🔐 🔐
+                Encrypt. Compete. Win.
               </p>
             </div>
           </div>
