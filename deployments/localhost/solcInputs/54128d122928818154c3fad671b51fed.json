@@ -1,0 +1,37 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/SimpleLottery.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.24;\r\n\r\n/// @title Simple Lottery Contract (Non-FHE version for testing)\r\n/// @author Neon Crypt Reveal\r\n/// @notice A simple lottery contract to test basic functionality\r\ncontract SimpleLottery {\r\n    struct Participant {\r\n        address user;\r\n        uint8 number;\r\n        bool hasParticipated;\r\n    }\r\n\r\n    uint8 public winningNumber;\r\n    Participant[] public participants;\r\n    mapping(address => bool) public hasParticipated;\r\n    bool public lotteryEnded;\r\n    address public winner;\r\n\r\n    uint256 public constant ENTRY_FEE = 0.01 ether;\r\n\r\n    event ParticipantJoined(address indexed user, uint8 number);\r\n    event LotteryEnded(address indexed winner, uint8 winningNumber, uint256 totalParticipants);\r\n\r\n    constructor() payable {\r\n        // Generate a simple random winning number\r\n        winningNumber = uint8(uint256(keccak256(abi.encodePacked(block.timestamp, block.number))) % 99) + 1;\r\n    }\r\n\r\n    /// @notice Submit a number to participate in the lottery\r\n    /// @param number The lucky number (1-99)\r\n    function submitNumber(uint8 number) external payable {\r\n        require(!lotteryEnded, \"Lottery has ended\");\r\n        require(msg.value == ENTRY_FEE, \"Must send exactly 0.01 ETH\");\r\n        require(!hasParticipated[msg.sender], \"Already participated\");\r\n        require(number >= 1 && number <= 99, \"Number must be between 1 and 99\");\r\n\r\n        participants.push(Participant({\r\n            user: msg.sender,\r\n            number: number,\r\n            hasParticipated: true\r\n        }));\r\n\r\n        hasParticipated[msg.sender] = true;\r\n\r\n        emit ParticipantJoined(msg.sender, number);\r\n    }\r\n\r\n    /// @notice End the lottery and select winner\r\n    function endLottery() external {\r\n        require(!lotteryEnded, \"Lottery has already ended\");\r\n        require(participants.length > 0, \"No participants\");\r\n\r\n        lotteryEnded = true;\r\n\r\n        // Find winner\r\n        for (uint256 i = 0; i < participants.length; i++) {\r\n            if (participants[i].number == winningNumber) {\r\n                winner = participants[i].user;\r\n                break;\r\n            }\r\n        }\r\n\r\n        emit LotteryEnded(winner, winningNumber, participants.length);\r\n    }\r\n\r\n    /// @notice Get lottery status\r\n    function getLotteryStatus() external view returns (\r\n        bool _lotteryEnded,\r\n        address _winner,\r\n        uint8 _winningNumber,\r\n        uint256 _participantCount\r\n    ) {\r\n        return (lotteryEnded, winner, winningNumber, participants.length);\r\n    }\r\n\r\n    /// @notice Get participant info\r\n    function getParticipant(uint256 index) external view returns (\r\n        address user,\r\n        uint8 number,\r\n        bool participated\r\n    ) {\r\n        require(index < participants.length, \"Index out of bounds\");\r\n        Participant memory p = participants[index];\r\n        return (p.user, p.number, p.hasParticipated);\r\n    }\r\n\r\n    /// @notice Withdraw prize money (winner only)\r\n    function withdrawFunds() external {\r\n        require(lotteryEnded, \"Lottery must end first\");\r\n        require(msg.sender == winner, \"Only winner can withdraw\");\r\n\r\n        uint256 balance = address(this).balance;\r\n        require(balance > 0, \"No funds to withdraw\");\r\n\r\n        payable(winner).transfer(balance);\r\n    }\r\n\r\n    /// @notice Get contract balance\r\n    function getContractBalance() external view returns (uint256) {\r\n        return address(this).balance;\r\n    }\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "metadata": {
+      "bytecodeHash": "none",
+      "useLiteralContent": true
+    },
+    "optimizer": {
+      "enabled": true,
+      "runs": 800
+    },
+    "evmVersion": "cancun",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    }
+  }
+}
