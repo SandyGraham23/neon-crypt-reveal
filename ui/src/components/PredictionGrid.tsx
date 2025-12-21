@@ -1,4 +1,5 @@
 import { Lock, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface PredictionSlot {
   id: string;
@@ -23,57 +24,63 @@ interface PredictionGridProps {
 
 export const PredictionGrid = ({ onSelectEvent }: PredictionGridProps) => {
   return (
-    <section className="py-20 relative">
+    <section className="py-12 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h3 className="text-4xl font-orbitron font-bold mb-4 neon-text">
-            Active Prediction Markets
-          </h3>
-          <p className="text-muted-foreground font-mono">
-            Choose an event and submit your encrypted prediction
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {mockSlots.map((slot) => (
-            <div
+          {mockSlots.map((slot, index) => (
+            <motion.div
               key={slot.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.03, y: -5 }}
+              whileTap={{ scale: 0.98 }}
               className="relative group cursor-pointer"
               onClick={() => slot.status === "active" && onSelectEvent(slot)}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg blur-xl group-hover:blur-2xl transition-all opacity-50 group-hover:opacity-100" />
-              
+
               <div className="relative bg-card border-2 border-primary/30 rounded-lg p-6 hover:border-primary transition-all neon-border">
                 <div className="flex items-start justify-between mb-4">
-                  <span className="px-3 py-1 bg-muted rounded-full text-xs font-mono text-foreground">
+                  <motion.span
+                    whileHover={{ scale: 1.1 }}
+                    className="px-3 py-1 bg-muted rounded-full text-xs font-mono text-foreground"
+                  >
                     {slot.category}
-                  </span>
+                  </motion.span>
                   {slot.status === "locked" && (
-                    <Lock className="h-4 w-4 text-secondary" />
+                    <motion.div
+                      animate={{ rotate: [0, 10, -10, 0] }}
+                      transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
+                    >
+                      <Lock className="h-4 w-4 text-secondary" />
+                    </motion.div>
                   )}
                   {slot.status === "revealed" && (
-                    <TrendingUp className="h-4 w-4 text-accent" />
+                    <motion.div animate={{ y: [0, -3, 0] }} transition={{ duration: 1, repeat: Infinity }}>
+                      <TrendingUp className="h-4 w-4 text-accent" />
+                    </motion.div>
                   )}
                 </div>
-                
-                <h4 className="text-xl font-orbitron font-bold mb-3 neon-text">
-                  {slot.title}
-                </h4>
-                
+
+                <h4 className="text-xl font-orbitron font-bold mb-3 neon-text">{slot.title}</h4>
+
                 <div className="flex items-center justify-between text-sm font-mono">
-                  <span className="text-muted-foreground">
-                    {slot.participants.toLocaleString()} predictions
-                  </span>
-                  <span className={`font-bold ${
-                    slot.status === "active" ? "text-accent" :
-                    slot.status === "locked" ? "text-secondary" :
-                    "text-primary"
-                  }`}>
+                  <span className="text-muted-foreground">{slot.participants.toLocaleString()} predictions</span>
+                  <span
+                    className={`font-bold ${
+                      slot.status === "active"
+                        ? "text-accent"
+                        : slot.status === "locked"
+                          ? "text-secondary"
+                          : "text-primary"
+                    }`}
+                  >
                     {slot.status.toUpperCase()}
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

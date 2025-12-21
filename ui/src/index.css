@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cyberpunk Neon Theme - Design System */
 
 @layer base {
   :root {
-    /* Cyberpunk Neon Theme */
+    /* Core Colors */
     --background: 220 30% 8%;
     --foreground: 180 100% 95%;
 
@@ -39,23 +37,13 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Custom Neon Colors */
+    /* Neon Colors */
     --neon-cyan: 180 100% 50%;
     --neon-magenta: 320 100% 60%;
     --neon-green: 150 100% 50%;
     --grid-line: 180 100% 50%;
-    
-    /* Gradients */
-    --gradient-neon: linear-gradient(135deg, hsl(180 100% 50% / 0.3), hsl(320 100% 60% / 0.3));
-    --gradient-glow: radial-gradient(circle at center, hsl(180 100% 50% / 0.2), transparent);
-    
-    /* Shadows */
-    --shadow-neon: 0 0 20px hsl(180 100% 50% / 0.5);
-    --shadow-glow: 0 0 40px hsl(180 100% 50% / 0.3);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+    /* Sidebar */
     --sidebar-background: 220 30% 10%;
     --sidebar-foreground: 180 100% 95%;
     --sidebar-primary: 180 100% 50%;
@@ -67,7 +55,6 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode uses same neon theme */
     --background: 220 30% 8%;
     --foreground: 180 100% 95%;
     --card: 220 25% 12%;
@@ -105,41 +92,203 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-mono;
-    background-image: 
+    background-image:
       linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
 }
 
 @layer utilities {
+  /* Neon text effect */
   .neon-text {
-    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary));
+    color: hsl(var(--primary));
+    text-shadow:
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 20px hsl(var(--primary) / 0.5);
   }
-  
+
+  /* Neon border effect */
   .neon-border {
-    box-shadow: 0 0 10px hsl(var(--primary)), inset 0 0 10px hsl(var(--primary) / 0.2);
+    box-shadow:
+      0 0 5px hsl(var(--primary) / 0.5),
+      0 0 10px hsl(var(--primary) / 0.3),
+      inset 0 0 5px hsl(var(--primary) / 0.1);
   }
-  
+
+  /* Glow pulse animation */
   .glow-pulse {
     animation: glow-pulse 2s ease-in-out infinite;
   }
-  
+
   @keyframes glow-pulse {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 1;
-      filter: brightness(1);
+      filter: brightness(1) drop-shadow(0 0 5px hsl(var(--primary)));
     }
     50% {
       opacity: 0.8;
-      filter: brightness(1.2);
+      filter: brightness(1.2) drop-shadow(0 0 15px hsl(var(--primary)));
     }
   }
-  
+
+  /* Grid pattern background */
   .grid-pattern {
-    background-image: 
+    background-image:
       linear-gradient(rgba(0, 255, 255, 0.1) 2px, transparent 2px),
       linear-gradient(90deg, rgba(0, 255, 255, 0.1) 2px, transparent 2px);
     background-size: 40px 40px;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out forwards;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scale in animation */
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Floating animation */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Cyber glitch effect */
+  .glitch {
+    position: relative;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    animation: glitch-1 0.3s infinite linear alternate-reverse;
+    color: hsl(var(--secondary));
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+
+  .glitch::after {
+    animation: glitch-2 0.3s infinite linear alternate-reverse;
+    color: hsl(var(--accent));
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+
+  @keyframes glitch-1 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2px);
+    }
+  }
+
+  @keyframes glitch-2 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(2px);
+    }
   }
 }

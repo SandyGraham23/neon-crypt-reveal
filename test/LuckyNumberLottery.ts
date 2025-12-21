@@ -67,6 +67,7 @@ describe("LuckyNumberLottery", function () {
     const hasParticipated = await lotteryContract.hasUserParticipated(signers.alice.address);
     expect(hasParticipated).to.be.true;
 
+    // Check contract balance increased
     const balance = await lotteryContract.getContractBalance();
     expect(balance).to.be.gt(ethers.parseEther("0.01"));
   });

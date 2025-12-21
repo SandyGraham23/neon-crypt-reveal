@@ -1,0 +1,416 @@
+{
+  "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "winner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "winningNumber",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalParticipants",
+          "type": "uint256"
+        }
+      ],
+      "name": "LotteryEnded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "number",
+          "type": "uint8"
+        }
+      ],
+      "name": "ParticipantJoined",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "ENTRY_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "endLottery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getContractBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getLotteryStatus",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "_lotteryEnded",
+          "type": "bool"
+        },
+        {
+          "internalType": "address",
+          "name": "_winner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_winningNumber",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_participantCount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getParticipant",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "number",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bool",
+          "name": "participated",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "hasParticipated",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lotteryEnded",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "participants",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "number",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bool",
+          "name": "hasParticipated",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "number",
+          "type": "uint8"
+        }
+      ],
+      "name": "submitNumber",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "winner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "winningNumber",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawFunds",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xc3dee12fde686217703f2b15631a83d5e309f20e60a7d7b356a6aaee24b534a5",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "transactionIndex": 0,
+    "gasUsed": "610990",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x0beebc4a50029c20952067e373087ad0cdca1976d4842d6d7bf653389cdef74d",
+    "transactionHash": "0xc3dee12fde686217703f2b15631a83d5e309f20e60a7d7b356a6aaee24b534a5",
+    "logs": [],
+    "blockNumber": 4,
+    "cumulativeGasUsed": "610990",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "54128d122928818154c3fad671b51fed",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.27+commit.40a35a09\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"winningNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalParticipants\",\"type\":\"uint256\"}],\"name\":\"LotteryEnded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"number\",\"type\":\"uint8\"}],\"name\":\"ParticipantJoined\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ENTRY_FEE\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"endLottery\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getContractBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLotteryStatus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_lotteryEnded\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"_winner\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"_winningNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"_participantCount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getParticipant\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"number\",\"type\":\"uint8\"},{\"internalType\":\"bool\",\"name\":\"participated\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"hasParticipated\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lotteryEnded\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"participants\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"number\",\"type\":\"uint8\"},{\"internalType\":\"bool\",\"name\":\"hasParticipated\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"number\",\"type\":\"uint8\"}],\"name\":\"submitNumber\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"winner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"winningNumber\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawFunds\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Neon Crypt Reveal\",\"kind\":\"dev\",\"methods\":{\"submitNumber(uint8)\":{\"params\":{\"number\":\"The lucky number (1-99)\"}}},\"title\":\"Simple Lottery Contract (Non-FHE version for testing)\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"endLottery()\":{\"notice\":\"End the lottery and select winner\"},\"getContractBalance()\":{\"notice\":\"Get contract balance\"},\"getLotteryStatus()\":{\"notice\":\"Get lottery status\"},\"getParticipant(uint256)\":{\"notice\":\"Get participant info\"},\"submitNumber(uint8)\":{\"notice\":\"Submit a number to participate in the lottery\"},\"withdrawFunds()\":{\"notice\":\"Withdraw prize money (winner only)\"}},\"notice\":\"A simple lottery contract to test basic functionality\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SimpleLottery.sol\":\"SimpleLottery\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":800},\"remappings\":[]},\"sources\":{\"contracts/SimpleLottery.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.24;\\r\\n\\r\\n/// @title Simple Lottery Contract (Non-FHE version for testing)\\r\\n/// @author Neon Crypt Reveal\\r\\n/// @notice A simple lottery contract to test basic functionality\\r\\ncontract SimpleLottery {\\r\\n    struct Participant {\\r\\n        address user;\\r\\n        uint8 number;\\r\\n        bool hasParticipated;\\r\\n    }\\r\\n\\r\\n    uint8 public winningNumber;\\r\\n    Participant[] public participants;\\r\\n    mapping(address => bool) public hasParticipated;\\r\\n    bool public lotteryEnded;\\r\\n    address public winner;\\r\\n\\r\\n    uint256 public constant ENTRY_FEE = 0.01 ether;\\r\\n\\r\\n    event ParticipantJoined(address indexed user, uint8 number);\\r\\n    event LotteryEnded(address indexed winner, uint8 winningNumber, uint256 totalParticipants);\\r\\n\\r\\n    constructor() payable {\\r\\n        // Generate a simple random winning number\\r\\n        winningNumber = uint8(uint256(keccak256(abi.encodePacked(block.timestamp, block.number))) % 99) + 1;\\r\\n    }\\r\\n\\r\\n    /// @notice Submit a number to participate in the lottery\\r\\n    /// @param number The lucky number (1-99)\\r\\n    function submitNumber(uint8 number) external payable {\\r\\n        require(!lotteryEnded, \\\"Lottery has ended\\\");\\r\\n        require(msg.value == ENTRY_FEE, \\\"Must send exactly 0.01 ETH\\\");\\r\\n        require(!hasParticipated[msg.sender], \\\"Already participated\\\");\\r\\n        require(number >= 1 && number <= 99, \\\"Number must be between 1 and 99\\\");\\r\\n\\r\\n        participants.push(Participant({\\r\\n            user: msg.sender,\\r\\n            number: number,\\r\\n            hasParticipated: true\\r\\n        }));\\r\\n\\r\\n        hasParticipated[msg.sender] = true;\\r\\n\\r\\n        emit ParticipantJoined(msg.sender, number);\\r\\n    }\\r\\n\\r\\n    /// @notice End the lottery and select winner\\r\\n    function endLottery() external {\\r\\n        require(!lotteryEnded, \\\"Lottery has already ended\\\");\\r\\n        require(participants.length > 0, \\\"No participants\\\");\\r\\n\\r\\n        lotteryEnded = true;\\r\\n\\r\\n        // Find winner\\r\\n        for (uint256 i = 0; i < participants.length; i++) {\\r\\n            if (participants[i].number == winningNumber) {\\r\\n                winner = participants[i].user;\\r\\n                break;\\r\\n            }\\r\\n        }\\r\\n\\r\\n        emit LotteryEnded(winner, winningNumber, participants.length);\\r\\n    }\\r\\n\\r\\n    /// @notice Get lottery status\\r\\n    function getLotteryStatus() external view returns (\\r\\n        bool _lotteryEnded,\\r\\n        address _winner,\\r\\n        uint8 _winningNumber,\\r\\n        uint256 _participantCount\\r\\n    ) {\\r\\n        return (lotteryEnded, winner, winningNumber, participants.length);\\r\\n    }\\r\\n\\r\\n    /// @notice Get participant info\\r\\n    function getParticipant(uint256 index) external view returns (\\r\\n        address user,\\r\\n        uint8 number,\\r\\n        bool participated\\r\\n    ) {\\r\\n        require(index < participants.length, \\\"Index out of bounds\\\");\\r\\n        Participant memory p = participants[index];\\r\\n        return (p.user, p.number, p.hasParticipated);\\r\\n    }\\r\\n\\r\\n    /// @notice Withdraw prize money (winner only)\\r\\n    function withdrawFunds() external {\\r\\n        require(lotteryEnded, \\\"Lottery must end first\\\");\\r\\n        require(msg.sender == winner, \\\"Only winner can withdraw\\\");\\r\\n\\r\\n        uint256 balance = address(this).balance;\\r\\n        require(balance > 0, \\\"No funds to withdraw\\\");\\r\\n\\r\\n        payable(winner).transfer(balance);\\r\\n    }\\r\\n\\r\\n    /// @notice Get contract balance\\r\\n    function getContractBalance() external view returns (uint256) {\\r\\n        return address(this).balance;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xa835606129addbbaef4313956cda33d020c83913f1274283976072a98b1fc98b\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x4260a09081524360c0526040608081905260e0815290206020906063906040565b6029906001605e565b5f805460ff191660ff929092169190911790556088565b5f82605957634e487b7160e01b5f52601260045260245ffd5b500690565b60ff8181168382160190811115608257634e487b7160e01b5f52601160045260245ffd5b92915050565b6109ab806100955f395ff3fe6080604052600436106100c3575f3560e01c8063586abc5a11610071578063dd09498a1161004c578063dd09498a14610247578063dfbf53ae1461025a578063f6d361cc14610296575f5ffd5b8063586abc5a146101d45780636f9fb98a146101fd578063b4fb3ee314610219575f5ffd5b80632b6524cd116100a15780632b6524cd1461013e57806335c1d3491461018b5780634664611e146101aa575f5ffd5b80631593a8c7146100c75780631b9db2ef146100dd57806324600fc31461012a575b5f5ffd5b3480156100d2575f5ffd5b506100db6102b0565b005b3480156100e8575f5ffd5b506100fc6100f7366004610926565b610467565b604080516001600160a01b03909416845260ff90921660208401521515908201526060015b60405180910390f35b348015610135575f5ffd5b506100db610529565b348015610149575f5ffd5b506003545f546001546040805160ff808616151582526101009095046001600160a01b0316602082015293909216918301919091526060820152608001610121565b348015610196575f5ffd5b506100fc6101a5366004610926565b610667565b3480156101b5575f5ffd5b505f546101c29060ff1681565b60405160ff9091168152602001610121565b3480156101df575f5ffd5b506003546101ed9060ff1681565b6040519015158152602001610121565b348015610208575f5ffd5b50475b604051908152602001610121565b348015610224575f5ffd5b506101ed61023336600461093d565b60026020525f908152604090205460ff1681565b6100db61025536600461096a565b6106a4565b348015610265575f5ffd5b5060035461027e9061010090046001600160a01b031681565b6040516001600160a01b039091168152602001610121565b3480156102a1575f5ffd5b5061020b662386f26fc1000081565b60035460ff16156103085760405162461bcd60e51b815260206004820152601960248201527f4c6f74746572792068617320616c726561647920656e6465640000000000000060448201526064015b60405180910390fd5b6001546103575760405162461bcd60e51b815260206004820152600f60248201527f4e6f207061727469636970616e7473000000000000000000000000000000000060448201526064016102ff565b6003805460ff191660011790555f5b60015481101561040e575f546001805460ff909216918390811061038c5761038c61098a565b5f91825260209091200154600160a01b900460ff160361040657600181815481106103b9576103b961098a565b5f91825260209091200154600380546001600160a01b03909216610100027fffffffffffffffffffffff0000000000000000000000000000000000000000ff90921691909117905561040e565b600101610366565b506003545f546001546040805160ff909316835260208301919091526101009092046001600160a01b0316917f64ff20407f3e70887fbe46f4b2468e866b1be5088a2cfa4d11e6e79caefa9e69910160405180910390a2565b5f5f5f60018054905084106104be5760405162461bcd60e51b815260206004820152601360248201527f496e646578206f7574206f6620626f756e64730000000000000000000000000060448201526064016102ff565b5f600185815481106104d2576104d261098a565b5f9182526020918290206040805160608101825292909101546001600160a01b03811680845260ff600160a01b83048116958501869052600160a81b90920490911615159290910182905297919650945092505050565b60035460ff1661057b5760405162461bcd60e51b815260206004820152601660248201527f4c6f7474657279206d75737420656e642066697273740000000000000000000060448201526064016102ff565b60035461010090046001600160a01b031633146105da5760405162461bcd60e51b815260206004820152601860248201527f4f6e6c792077696e6e65722063616e207769746864726177000000000000000060448201526064016102ff565b47806106285760405162461bcd60e51b815260206004820152601460248201527f4e6f2066756e647320746f20776974686472617700000000000000000000000060448201526064016102ff565b6003546040516101009091046001600160a01b0316906108fc8315029083905f818181858888f19350505050158015610663573d5f5f3e3d5ffd5b5050565b60018181548110610676575f80fd5b5f918252602090912001546001600160a01b038116915060ff600160a01b8204811691600160a81b90041683565b60035460ff16156106f75760405162461bcd60e51b815260206004820152601160248201527f4c6f74746572792068617320656e64656400000000000000000000000000000060448201526064016102ff565b662386f26fc10000341461074d5760405162461bcd60e51b815260206004820152601a60248201527f4d7573742073656e642065786163746c7920302e30312045544800000000000060448201526064016102ff565b335f9081526002602052604090205460ff16156107ac5760405162461bcd60e51b815260206004820152601460248201527f416c72656164792070617274696369706174656400000000000000000000000060448201526064016102ff565b60018160ff16101580156107c4575060638160ff1611155b6108105760405162461bcd60e51b815260206004820152601f60248201527f4e756d626572206d757374206265206265747765656e203120616e642039390060448201526064016102ff565b604080516060810182523380825260ff84811660208085018281526001868801818152815480830183555f83815298517fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf69091018054945192511515600160a81b027fffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff93909816600160a01b027fffffffffffffffffffffff0000000000000000000000000000000000000000009095166001600160a01b039092169190911793909317169490941790558385526002815293859020805460ff19169092179091559251928352917f2c9fb758a92d4b82564b6315709f124106d496c392ed234d880f57fc20d7abd0910160405180910390a250565b5f60208284031215610936575f5ffd5b5035919050565b5f6020828403121561094d575f5ffd5b81356001600160a01b0381168114610963575f5ffd5b9392505050565b5f6020828403121561097a575f5ffd5b813560ff81168114610963575f5ffd5b634e487b7160e01b5f52603260045260245ffdfea164736f6c634300081b000a",
+  "deployedBytecode": "0x6080604052600436106100c3575f3560e01c8063586abc5a11610071578063dd09498a1161004c578063dd09498a14610247578063dfbf53ae1461025a578063f6d361cc14610296575f5ffd5b8063586abc5a146101d45780636f9fb98a146101fd578063b4fb3ee314610219575f5ffd5b80632b6524cd116100a15780632b6524cd1461013e57806335c1d3491461018b5780634664611e146101aa575f5ffd5b80631593a8c7146100c75780631b9db2ef146100dd57806324600fc31461012a575b5f5ffd5b3480156100d2575f5ffd5b506100db6102b0565b005b3480156100e8575f5ffd5b506100fc6100f7366004610926565b610467565b604080516001600160a01b03909416845260ff90921660208401521515908201526060015b60405180910390f35b348015610135575f5ffd5b506100db610529565b348015610149575f5ffd5b506003545f546001546040805160ff808616151582526101009095046001600160a01b0316602082015293909216918301919091526060820152608001610121565b348015610196575f5ffd5b506100fc6101a5366004610926565b610667565b3480156101b5575f5ffd5b505f546101c29060ff1681565b60405160ff9091168152602001610121565b3480156101df575f5ffd5b506003546101ed9060ff1681565b6040519015158152602001610121565b348015610208575f5ffd5b50475b604051908152602001610121565b348015610224575f5ffd5b506101ed61023336600461093d565b60026020525f908152604090205460ff1681565b6100db61025536600461096a565b6106a4565b348015610265575f5ffd5b5060035461027e9061010090046001600160a01b031681565b6040516001600160a01b039091168152602001610121565b3480156102a1575f5ffd5b5061020b662386f26fc1000081565b60035460ff16156103085760405162461bcd60e51b815260206004820152601960248201527f4c6f74746572792068617320616c726561647920656e6465640000000000000060448201526064015b60405180910390fd5b6001546103575760405162461bcd60e51b815260206004820152600f60248201527f4e6f207061727469636970616e7473000000000000000000000000000000000060448201526064016102ff565b6003805460ff191660011790555f5b60015481101561040e575f546001805460ff909216918390811061038c5761038c61098a565b5f91825260209091200154600160a01b900460ff160361040657600181815481106103b9576103b961098a565b5f91825260209091200154600380546001600160a01b03909216610100027fffffffffffffffffffffff0000000000000000000000000000000000000000ff90921691909117905561040e565b600101610366565b506003545f546001546040805160ff909316835260208301919091526101009092046001600160a01b0316917f64ff20407f3e70887fbe46f4b2468e866b1be5088a2cfa4d11e6e79caefa9e69910160405180910390a2565b5f5f5f60018054905084106104be5760405162461bcd60e51b815260206004820152601360248201527f496e646578206f7574206f6620626f756e64730000000000000000000000000060448201526064016102ff565b5f600185815481106104d2576104d261098a565b5f9182526020918290206040805160608101825292909101546001600160a01b03811680845260ff600160a01b83048116958501869052600160a81b90920490911615159290910182905297919650945092505050565b60035460ff1661057b5760405162461bcd60e51b815260206004820152601660248201527f4c6f7474657279206d75737420656e642066697273740000000000000000000060448201526064016102ff565b60035461010090046001600160a01b031633146105da5760405162461bcd60e51b815260206004820152601860248201527f4f6e6c792077696e6e65722063616e207769746864726177000000000000000060448201526064016102ff565b47806106285760405162461bcd60e51b815260206004820152601460248201527f4e6f2066756e647320746f20776974686472617700000000000000000000000060448201526064016102ff565b6003546040516101009091046001600160a01b0316906108fc8315029083905f818181858888f19350505050158015610663573d5f5f3e3d5ffd5b5050565b60018181548110610676575f80fd5b5f918252602090912001546001600160a01b038116915060ff600160a01b8204811691600160a81b90041683565b60035460ff16156106f75760405162461bcd60e51b815260206004820152601160248201527f4c6f74746572792068617320656e64656400000000000000000000000000000060448201526064016102ff565b662386f26fc10000341461074d5760405162461bcd60e51b815260206004820152601a60248201527f4d7573742073656e642065786163746c7920302e30312045544800000000000060448201526064016102ff565b335f9081526002602052604090205460ff16156107ac5760405162461bcd60e51b815260206004820152601460248201527f416c72656164792070617274696369706174656400000000000000000000000060448201526064016102ff565b60018160ff16101580156107c4575060638160ff1611155b6108105760405162461bcd60e51b815260206004820152601f60248201527f4e756d626572206d757374206265206265747765656e203120616e642039390060448201526064016102ff565b604080516060810182523380825260ff84811660208085018281526001868801818152815480830183555f83815298517fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf69091018054945192511515600160a81b027fffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff93909816600160a01b027fffffffffffffffffffffff0000000000000000000000000000000000000000009095166001600160a01b039092169190911793909317169490941790558385526002815293859020805460ff19169092179091559251928352917f2c9fb758a92d4b82564b6315709f124106d496c392ed234d880f57fc20d7abd0910160405180910390a250565b5f60208284031215610936575f5ffd5b5035919050565b5f6020828403121561094d575f5ffd5b81356001600160a01b0381168114610963575f5ffd5b9392505050565b5f6020828403121561097a575f5ffd5b813560ff81168114610963575f5ffd5b634e487b7160e01b5f52603260045260245ffdfea164736f6c634300081b000a",
+  "devdoc": {
+    "author": "Neon Crypt Reveal",
+    "kind": "dev",
+    "methods": {
+      "submitNumber(uint8)": {
+        "params": {
+          "number": "The lucky number (1-99)"
+        }
+      }
+    },
+    "title": "Simple Lottery Contract (Non-FHE version for testing)",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "endLottery()": {
+        "notice": "End the lottery and select winner"
+      },
+      "getContractBalance()": {
+        "notice": "Get contract balance"
+      },
+      "getLotteryStatus()": {
+        "notice": "Get lottery status"
+      },
+      "getParticipant(uint256)": {
+        "notice": "Get participant info"
+      },
+      "submitNumber(uint8)": {
+        "notice": "Submit a number to participate in the lottery"
+      },
+      "withdrawFunds()": {
+        "notice": "Withdraw prize money (winner only)"
+      }
+    },
+    "notice": "A simple lottery contract to test basic functionality",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 11,
+        "contract": "contracts/SimpleLottery.sol:SimpleLottery",
+        "label": "winningNumber",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint8"
+      },
+      {
+        "astId": 15,
+        "contract": "contracts/SimpleLottery.sol:SimpleLottery",
+        "label": "participants",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_struct(Participant)9_storage)dyn_storage"
+      },
+      {
+        "astId": 19,
+        "contract": "contracts/SimpleLottery.sol:SimpleLottery",
+        "label": "hasParticipated",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 21,
+        "contract": "contracts/SimpleLottery.sol:SimpleLottery",
+        "label": "lotteryEnded",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_bool"
+      },
+      {
+        "astId": 23,
+        "contract": "contracts/SimpleLottery.sol:SimpleLottery",
+        "label": "winner",
+        "offset": 1,
+        "slot": "3",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_struct(Participant)9_storage)dyn_storage": {
+        "base": "t_struct(Participant)9_storage",
+        "encoding": "dynamic_array",
+        "label": "struct SimpleLottery.Participant[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_struct(Participant)9_storage": {
+        "encoding": "inplace",
+        "label": "struct SimpleLottery.Participant",
+        "members": [
+          {
+            "astId": 4,
+            "contract": "contracts/SimpleLottery.sol:SimpleLottery",
+            "label": "user",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 6,
+            "contract": "contracts/SimpleLottery.sol:SimpleLottery",
+            "label": "number",
+            "offset": 20,
+            "slot": "0",
+            "type": "t_uint8"
+          },
+          {
+            "astId": 8,
+            "contract": "contracts/SimpleLottery.sol:SimpleLottery",
+            "label": "hasParticipated",
+            "offset": 21,
+            "slot": "0",
+            "type": "t_bool"
+          }
+        ],
+        "numberOfBytes": "32"
+      },
+      "t_uint8": {
+        "encoding": "inplace",
+        "label": "uint8",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}

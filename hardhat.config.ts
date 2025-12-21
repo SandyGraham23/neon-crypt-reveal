@@ -79,6 +79,7 @@ const config: HardhatUserConfig = {
         : INFURA_API_KEY && INFURA_API_KEY !== "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
         ? `https://sepolia.infura.io/v3/${INFURA_API_KEY}`
         : process.env.SEPOLIA_RPC_URL || "https://ethereum-sepolia-rpc.publicnode.com",
+      timeout: 300000,
     },
   },
   paths: {
